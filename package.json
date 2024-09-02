@@ -17,5 +17,13 @@
   "devDependencies": {
     "parcel": "^2.12.0",
     "process": "^0.11.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushtri/ReactPrac.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ayushtri/ReactPrac/issues"
+  },
+  "homepage": "https://github.com/ayushtri/ReactPrac#readme"
 }
