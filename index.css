@@ -59,6 +59,12 @@
     margin: 0 40px;
   }
 
+.res-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 .res-card {
     width: 240px;
     padding: 5px;
