@@ -1,0 +1,65 @@
+{
+  "info": {
+    "id": "695745",
+    "name": "Pizza Hut",
+    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/7/18/70d5fdb3-5e71-45fb-a036-d09c01e53459_695745.jpg",
+    "locality": "Housing Board Colony",
+    "areaName": "Bairagarh",
+    "costForTwo": "₹350 for two",
+    "cuisines": ["Pizzas"],
+    "avgRating": 4.2,
+    "parentId": "721",
+    "avgRatingString": "4.2",
+    "totalRatingsString": "1.9K+",
+    "sla": {
+      "deliveryTime": 31,
+      "lastMileTravel": 5.5,
+      "serviceability": "SERVICEABLE",
+      "slaString": "30-35 mins",
+      "lastMileTravelString": "5.5 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2025-01-22 03:00:00",
+      "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {},
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "aggregatedDiscountInfoV3": {
+      "header": "20% OFF",
+      "subHeader": "ABOVE ₹1799",
+      "discountTag": "FLAT DEAL"
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {},
+    "externalRatings": {
+      "aggregatedRating": {
+        "rating": "--"
+      }
+    },
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+  },
+  "analytics": {
+    "context": "seo-data-bc78da99-6ccd-4423-ae76-0e274fdf5769"
+  },
+  "cta": {
+    "link": "https://www.swiggy.com/city/bhopal/pizza-hut-housing-board-colony-bairagarh-rest695745",
+    "type": "WEBLINK"
+  }
+}

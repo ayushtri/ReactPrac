@@ -1,36 +1,58 @@
-import { useParams } from "react-router"; 
+import { useState } from "react";
+import { useParams } from "react-router";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
+  const { resId } = useParams();
 
-    const { resId } = useParams();
+  const resInfo = useRestaurantMenu(resId);
 
-    const resInfo = useRestaurantMenu(resId);
-    
-    const restaurantData = resInfo?.data?.cards?.[2]?.card?.card?.info || {}; 
+  const [showIndex, setShowIndex] = useState(null);
 
-    const { name = "Unknown Restaurant", cuisines = [], costForTwoMessage = "" } = restaurantData; 
+  const restaurantData = resInfo?.data?.cards?.[2]?.card?.card?.info || {};
 
-    const itemCards = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards || [];
+  const {
+    name = "Unknown Restaurant",
+    cuisines = [],
+    costForTwoMessage = "",
+  } = restaurantData;
 
-    return resInfo === null ? <Shimmer /> : (
+  const categories =
+    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
 
-        <div className="menu">
-            <h1>{name}</h1>
-            <h3>{cuisines.join(', ')}</h3>
-            <h3>{costForTwoMessage}</h3>
-            <h2>Menu</h2>
-            <h3>Recommended</h3>
-            <ul>
-                {itemCards.map(item => 
-                    <li key={item?.card?.info?.id}>{item?.card?.info?.name} - ₹{item?.card?.info?.price/100 || item?.card?.info?.defaultPrice/100}</li>
-                )}
-            </ul>
-            <h3></h3>
+  return resInfo === null ? (
+    <Shimmer />
+  ) : (
+    <div className="text-center">
+      <h1 className="font-bold my-6 text-2xl">{name}</h1>
+      <p className="font-bold text-lg">
+        {cuisines.join(", ")} - {costForTwoMessage}
+      </p>
+      <h3 className="font-bold"></h3>
 
-        </div>
-    )
-}
+      {/* Categories accordian */}
+      {categories.map((category, index) => (
+        <RestaurantCategory
+          key={category.card?.card?.title}
+          data={category?.card?.card}
+          showItems={index === showIndex ? true : false}
+          setShowIndex={() => {
+            if (showIndex === index) {
+              setShowIndex(null);
+            } else {
+              setShowIndex(index);
+            }
+          }}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default RestaurantMenu;
